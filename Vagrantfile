@@ -73,12 +73,13 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get update
-    apt-get -y install curl openssh-server ca-certificates
-    debconf-set-selections <<< "postfix postfix/mailname string maple.duckdns.org"
-    debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
-    apt-get -y install postfix
-    curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
-    apt-get -y install gitlab-ce
+    sudo apt-get update
+    sudo apt-get -y install curl openssh-server ca-certificates
+    sudo debconf-set-selections <<< "postfix postfix/mailname string maple.duckdns.org"
+    sudo debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
+    sudo apt-get -y install postfix
+    sudo curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+    sudo apt-get -y install gitlab-ce
+    sudo gitlab-ctl reconfigure
   SHELL
 end
