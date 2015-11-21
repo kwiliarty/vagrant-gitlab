@@ -75,12 +75,12 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
     sudo bash
     apt-get update
-    apt-get -y install curl openssh-server ca-certificates
+    apt-get install -y curl openssh-server ca-certificates
     debconf-set-selections <<< "postfix postfix/mailname string maple.duckdns.org"
     debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
-    apt-get -y install postfix
-    curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
-    apt-get -y install gitlab-ce
+    apt-get install -y postfix
+    curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | bash
+    apt-get install -y gitlab-ce
     gitlab-ctl reconfigure
     apt-get purge lxc-docker*
     apt-get purge docker.io*
@@ -90,5 +90,7 @@ Vagrant.configure(2) do |config|
     apt-cache policy docker-engine
     apt-get install -y docker-engine
     service docker start
+    curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-runner/script.deb.sh | bash
+    apt-get install -y gitlab-ci-multi-runner
   SHELL
 end
