@@ -29,7 +29,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: "192.168.24.7"
 
   # Define host aliases
-  config.vm.hostname = "gitlab"
+  config.vm.hostname = "local.gitlab.dev"
   config.hostsupdater.aliases = ["local.gitlab.dev"]
   config.hostsupdater.remove_on_suspend = true
 
