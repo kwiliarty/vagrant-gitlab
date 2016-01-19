@@ -9,8 +9,13 @@ Improvements welcome!
 ### Requirements
 
   * Besides vagrant you'll also want to have the vagrant-hostsupdater plugin. 
-  * This box uses 4GB of memory. That's more than the usual Vagrant machine.
+  * This box uses 6GB of memory. That's more than the usual Vagrant machine.
 
 ### Vagrant UP
 
 Just clone and vagrant up. :smile:
+
+NOTE: The initial admin user is: root
+The initial password is: 5iveL!fe
+
+You'll be prompted to update the password on first log in.
