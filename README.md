@@ -1,4 +1,4 @@
-# Vagrant Box
+# Gitlab Vagrant Box
 
 The idea is that you can create an installation of gitlab with some of the CI tools installed so that you can mess around with different runners or build CI scripts locally.
 
