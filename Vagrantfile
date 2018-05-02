@@ -29,8 +29,8 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: "192.168.24.7"
 
   # Define host aliases
-  config.vm.hostname = "local.gitlab.dev"
-  config.hostsupdater.aliases = ["local.gitlab.dev"]
+  config.vm.hostname = "gitlab.local"
+  config.hostsupdater.aliases = ["gitlab.local"]
   config.hostsupdater.remove_on_suspend = true
 
   # Create a public network, which generally matched to bridged network.

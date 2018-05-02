@@ -15,6 +15,10 @@ Improvements welcome!
 
 Just clone and vagrant up. :smile:
 
+The site will be available in a browser at:
+
+http://gitlab.local
+
 NOTE: The initial admin user is: root
 The initial password is: 5iveL!fe
 
